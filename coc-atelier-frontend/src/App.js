@@ -9,6 +9,9 @@ import ProductTray from './components/ProductTray';
 import OurStory from './components/OurStory';
 import OrderDrawer from './components/OrderDrawer';
 
+// CHATBOT INTEGRATION
+import Chatbot from './components/Chatbot';
+
 // Separate Page Views
 import About from './pages/About'; 
 import ProductsPage from './pages/ProductsPage'; 
@@ -58,7 +61,10 @@ function App() {
       {/* INTERACTIVE COMPONENT SLIDE DRAWER */}
       <OrderDrawer isOpen={isCartOpen} onClose={() => setIsCartOpen(false)} />
 
-      {/* 3. FIXED BOTTOM FRAME: Hide from the admin desk view to maximize display workspace */}
+      {/* 3. AI CHATBOT INTERACTION: Shows on all shop pages, hidden from admin desk view */}
+      {!isAdminPage && <Chatbot />}
+
+      {/* 4. FIXED BOTTOM FRAME: Hide from the admin desk view to maximize display workspace */}
       {!isAdminPage && (
         <footer className="site-footer">
           <p>© 2026 Cake o' Clock Atelier. All Rights Reserved.</p>
