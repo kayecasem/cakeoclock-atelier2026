@@ -42,7 +42,7 @@ export default function Chatbot() {
 
     // 2. Simulate or fetch backend response
     try {
-      const response = await fetch('http://localhost:5000/api/chat', { // Or your relative Vercel path '/api/chat'
+      const response = await fetch('https://cakeoclock-backend-f3c59u4bh-kaye-casem-s-projects.vercel.app/api/chat', { // Or your relative Vercel path '/api/chat'
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ message: textToSend, userId: 123 }) // userId helps pull MySQL records
